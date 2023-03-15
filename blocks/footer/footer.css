@@ -1,0 +1,19 @@
+.footer {
+    min-width: 320px;
+}
+@media (min-width: 768px) {
+    .footer {
+
+    }
+}
+@media (min-width: 1024px) {
+    .footer {
+        min-width: 928px;
+
+    }
+}
+@media (min-width: 1280px) {
+    .footer {
+        min-width: 1184px;
+    }
+}
