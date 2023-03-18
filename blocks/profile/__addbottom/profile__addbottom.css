@@ -1,0 +1,17 @@
+.profile__addbottom {
+    margin: 0 auto;
+    padding-top: 36px;
+}
+@media (min-width: 768px){
+    .profile__addbottom {
+        margin: 0;
+        padding-top: 30px;
+        width: 150px;
+        height: 50px;
+    }
+}
+@media (min-width: 768px){
+    .profile__addbottom {
+        padding-top: 34px;
+    }
+}

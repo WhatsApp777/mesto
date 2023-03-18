@@ -1,0 +1,5 @@
+.header__line {
+    display: flex;
+    justify-content: center;
+    border-color: 1ps solid red;
+}

@@ -1,0 +1,10 @@
+.place__content {
+    margin: 0;
+    padding: 25px 15px 31px 21px;
+    display: flex;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 0 0 10px 10px;
+    min-width: 246px;
+    max-height: 23px;
+}

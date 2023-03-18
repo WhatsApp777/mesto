@@ -1,19 +1,15 @@
 .footer {
-    min-width: 320px;
-}
-@media (min-width: 768px) {
-    .footer {
-
-    }
+    padding: 48px 19px 36px;
+    display: flex;
+    justify-content: flex-start;
 }
 @media (min-width: 1024px) {
     .footer {
-        min-width: 928px;
-
+        padding: 67px 0 60px 72px;
     }
 }
 @media (min-width: 1280px) {
     .footer {
-        min-width: 1184px;
+        padding: 67px 0 60px 200px;
     }
 }

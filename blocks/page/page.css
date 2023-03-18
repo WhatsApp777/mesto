@@ -5,7 +5,7 @@
     font-family: 'Inter', Arial, sans-serif;
     font-style: normal;
     color: #FFFFFF;
-    background-color: grey;
+    background-color: #000000;
 }
 @media (min-width: 768px) {
     .page {
