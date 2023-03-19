@@ -1,0 +1,13 @@
+.popup__name {
+    padding: 0;
+    margin: 75px 22px 0;
+    width: 230px;
+    height: 14px;
+}
+@media (min-width: 1024px) {
+    .popup__name {
+        margin: 75px 36px 0;
+        width: 354px;
+        height: 14px;
+    }
+}

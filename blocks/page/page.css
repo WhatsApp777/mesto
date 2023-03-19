@@ -6,6 +6,7 @@
     font-style: normal;
     color: #FFFFFF;
     background-color: #000000;
+    position: relative;
 }
 @media (min-width: 768px) {
     .page {

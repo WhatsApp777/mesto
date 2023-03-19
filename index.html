@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./pages/index.css">
     <title>Mesto</title>
-    <link rel="icon" href="./images/avatar1.jpg">
+    <link rel="icon" href="./images/logo.svg">
     <meta name="description" content="Mesto">
     <meta name="keywords" content="Базовый JavaScript и работа с браузером">
     <meta name="author" content="Практическая работа">
@@ -77,6 +77,15 @@
     <footer class="footer">
       <h2 class="footer__author">&copy; 2023 Mesto Russia</h2>
     </footer>
+    <div class="popup popup_open">
+      <div class="popup__content">
+        <div class="popup__close"></div>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input class="popup__name" type="text">
+        <input class="popup__data" type="text">
+        <button class="popup__button">Сохранить</button>
+      </div>
+    </div>
     <script src="./index.js"></script>
   </body>
 </html>

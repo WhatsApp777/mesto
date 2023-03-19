@@ -1,0 +1,26 @@
+.popup {
+    position: absolute;
+    position: fixed;
+    top: 123px;
+    left: 19px;
+    right: 19px;
+    width: 282px;
+    height: 322px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    z-index: 10;
+}
+@media (min-width: 1024px) {
+    .popup {
+        top: 195px;
+        left: 290px;
+        width: 430px;
+        height: 330px;
+    }
+}
+@media (min-width: 1280px) {
+    .popup {
+        top: 195px;
+        left: 425px;
+    }
+}
