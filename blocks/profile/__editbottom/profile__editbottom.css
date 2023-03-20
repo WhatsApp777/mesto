@@ -4,6 +4,7 @@
     height: 18px;
     display: flex;
     align-content: center;
+    cursor: pointer;
 }
 @media (min-width: 768px) {
     .profile__editbottom {

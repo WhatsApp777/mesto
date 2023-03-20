@@ -22,12 +22,12 @@
           <div class="profile__table">
             <div class="profile__info">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <img src="./images/EditButton.png" class="profile__editbottom" alt="редактор">
+              <button type="button" class="profile__editbottom">x</button>
             </div>
             <p class="profile__text">Исследователь океана</p>
           </div>
         </div>
-        <img src="./images/AddButton.png" class="profile__addbottom" alt="кнопка">
+        <button type="button" class="profile__addbottom"><img src="./images/AddButton2.svg"></button>
       </section>
       <section class="places">
         <div class="place">
@@ -77,14 +77,15 @@
     <footer class="footer">
       <h2 class="footer__author">&copy; 2023 Mesto Russia</h2>
     </footer>
-    <div class="popup popup_open">
-      <div class="popup__content">
-        <div class="popup__close"></div>
+    <div class="popup">
+      <div class="popup__container">
+        <button type="button" class="popup__close">x</button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <input class="popup__name" type="text">
-        <input class="popup__data" type="text">
-        <button class="popup__button">Сохранить</button>
-      </div>
+        <form class="popup__form" name="edit-profile">
+          <input class="popup__name" type="text" name="profile-name" id="profile-name" minlength="2" maxlength="40">
+          <input class="popup__data" type="text" name="profile-job" id="profile-job" minlength="2" maxlength="200">
+          <button type="submit" class="popup__button">Сохранить</button>
+        </form>
     </div>
     <script src="./index.js"></script>
   </body>
