@@ -1,6 +1,10 @@
 .place__like {
     margin: 0;
-    padding: 0;
+    padding-top: 5px;
     width: 22px;
     height: 19px;
+    transition: opacity 0.4s;
+}
+.place__like:hover {
+    opacity: 0.6;
 }

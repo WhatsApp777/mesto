@@ -1,4 +1,4 @@
-.popup__name {
+.form__input {
     padding: 0;
     margin: 75px 22px 0;
     width: 230px;
@@ -9,7 +9,7 @@
     color: #000000;
 }
 @media (min-width: 1024px) {
-    .popup__name {
+    .form__input {
         margin: 75px 36px 0;
         width: 354px;
         height: 14px;

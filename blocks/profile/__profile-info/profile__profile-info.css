@@ -1,9 +1,9 @@
-.profile__information {
+.profile__profile-info {
     display: flex;
     flex-direction: column;
 }
 @media (min-width: 768px) {
-    .profile__information {
+    .profile__profile-info {
         display: flex;
         flex-direction: row;
     }
