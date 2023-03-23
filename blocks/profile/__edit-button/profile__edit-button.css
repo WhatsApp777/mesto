@@ -13,7 +13,7 @@
 @media (min-width: 768px) {
     .profile__edit-button {
         background-image: url(../../../images/Edit1280.svg);
-        transform: translate(5px, 13px);
+        transform: translate(5px, 15px);
         width: 24px;
         height: 24px;
     }
