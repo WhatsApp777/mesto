@@ -9,6 +9,7 @@
     background-image: url(../../../images/like.svg);
     background-color: #FFFFFF;
     border: none;
+    background-repeat: no-repeat;
 }
 
 .place__like:hover {
