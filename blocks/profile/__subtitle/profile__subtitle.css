@@ -5,7 +5,12 @@
     font-size: 14px;
     line-height: 17px;
     text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 270px;
 }
+
 @media (min-width: 768px) {
     .profile__subtitle {
         margin: 0;
@@ -13,5 +18,6 @@
         font-size: 18px;
         line-height: 22px;
         text-align: left;
+        max-width: 270px;
     }
 }

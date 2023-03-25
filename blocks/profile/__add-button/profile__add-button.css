@@ -1,20 +1,25 @@
-.profile__add-buttom {
+.profile__add-button {
     margin: auto;
     margin-bottom: 36px;
     cursor: pointer;
     transform: translate(0, 32px);
-    background-color: #000000;
     background-image: url(../../../images/Add320.svg);
-    border: none;
+    background-position: center;
+    border: 2px solid #FFFFFF;
+    background-color: #000000;
+    background-repeat: no-repeat;
+    border-radius: 2px;
     width: 282px;
     height: 50px;
     transition: opacity 0.4s;
 }
-.profile__add-buttom:hover {
+
+.profile__add-button:hover {
     opacity: 0.6;
   }
+  
 @media (min-width: 768px){
-    .profile__add-buttom {
+    .profile__add-button {
         margin: 0;
         width: 150px;
         height: 50px;

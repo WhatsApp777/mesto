@@ -6,8 +6,10 @@
     line-height: 17px;
     color: #545454;
 }
+
 @media (min-width: 1280px) {
     .footer__author {
+        padding-top: 15px;
         font-size: 18px;
         line-height: 22px;
     }

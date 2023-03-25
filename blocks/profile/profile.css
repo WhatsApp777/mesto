@@ -1,10 +1,13 @@
 .profile {
+    max-width: 880px;
+    margin: 0 auto;
     padding: 38px 19px 33px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
 }
+
 @media (min-width: 768px) {
     .profile {
         flex-direction: row;
@@ -12,14 +15,15 @@
         padding: 40px 19px 51px;
     }
 }
+
 @media (min-width: 1024px) {
     .profile {
         padding: 40px 72px 51px;
     }
 }
+
 @media (min-width: 1280px) {
     .profile {
-        max-width: 880px;
         padding: 40px 200px 51px;
     }
 }
