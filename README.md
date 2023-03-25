@@ -26,4 +26,4 @@
 
 **Ссылка на GitHub Pages**
 
-* [Ссылка на GitHub Pages](https://whatsapp777.github.io/russian-travel/)
+* [Ссылка на GitHub Pages](https://whatsapp777.github.io/mesto/)
