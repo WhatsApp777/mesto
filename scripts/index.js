@@ -4,8 +4,8 @@ const popupProfile = document.querySelector('.popup');
 const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 let formElement = document.querySelector('.form');
-let nameInput = formElement.querySelector('.form__input_name');
-let jobInput = formElement.querySelector('.form__input_job');
+let nameInput = formElement.querySelector('.form__input_type_name');
+let jobInput = formElement.querySelector('.form__input_type_job');
 
 editButton.addEventListener('click', function popupOpen() {
   popupProfile.classList.add('popup_opened');
