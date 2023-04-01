@@ -1,0 +1,11 @@
+.form__cards_type_link {
+    padding-bottom: 8px;
+    margin: 30px 22px 0;
+}
+
+@media (min-width: 1024px) {
+    .form__cards_type_link {
+        padding-bottom: 11px;
+        margin: 28px 36px 0;
+    }
+}

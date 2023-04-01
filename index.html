@@ -29,43 +29,52 @@
           <button type="button" class="profile__add-button"></button>
       </section>
       <section class="places">
+
         <div class="place">
-          <img src="./images/karachaevsk.png" class="place__img" alt="карачаевск">
-          <div class="place__content">
-            <h2 class="place__title">Карачаевск</h2>
-            <button type="button" class="place__like"></button>
+          <div class="place__images">
+            <img src="./images/elbrus.png" class="place__img" alt="Гора Эльбрус">
+            <img src="./images/trash.svg" class="place__trash" alt="удалить">
           </div>
-        </div>
-        <div class="place">
-          <img src="./images/elbrus.png" class="place__img" alt="Гора Эльбрус">
           <div class="place__content">
             <h2 class="place__title">Гора Эльбрус</h2>
             <button type="button" class="place__like"></button>
           </div>
         </div>
         <div class="place">
-          <img src="./images/dombai.png" class="place__img" alt="Домбай">
+          <div class="place__images">
+            <img src="./images/dombai.png" class="place__img" alt="Домбай">
+            <img src="./images/trash.svg" class="place__trash" alt="удалить">
+          </div>
           <div class="place__content">
             <h2 class="place__title">Домбай</h2>
             <button type="button" class="place__like"></button>
           </div>
         </div>
         <div class="place">
-          <img src="./images/elbrus.png" class="place__img" alt="Гора Эльбрус">
+          <div class="place__images">
+            <img src="./images/elbrus.png" class="place__img" alt="Гора Эльбрус">
+            <img src="./images/trash.svg" class="place__trash" alt="удалить">
+          </div>
           <div class="place__content">
             <h2 class="place__title">Гора Эльбрус</h2>
             <button type="button" class="place__like"></button>
           </div>
         </div>
         <div class="place">
-          <img src="./images/dombai.png" class="place__img" alt="Домбай">
+          <div class="place__images">
+            <img src="./images/dombai.png" class="place__img" alt="Домбай">
+            <img src="./images/trash.svg" class="place__trash" alt="удалить">
+          </div>
           <div class="place__content">
             <h2 class="place__title">Домбай</h2>
             <button type="button" class="place__like"></button>
           </div>
         </div>
         <div class="place">
-          <img src="./images/karachaevsk.png" class="place__img" alt="карачаевск">
+          <div class="place__images">
+            <img src="./images/karachaevsk.png" class="place__img" alt="карачаевск">
+            <img src="./images/trash.svg" class="place__trash" alt="удалить">
+          </div>
           <div class="place__content">
             <h2 class="place__title">Карачаевск</h2>
             <button type="button" class="place__like"></button>
@@ -87,6 +96,29 @@
         </form>
       </div>
     </div>
+    <div class="popup__cards">
+      <div class="popup__cards-container">
+        <button class="popup__cards-close-button" type="button"></button>
+        <form class="form__cards" name="addCards">
+          <h2 class="form__cards-title">Новое место</h2>
+          <input type="text" placeholder="Название" class="form__input form__cards_type_name" name="profilePlaceName" id="profile_place_name">
+          <input type="text" placeholder="Ссылка на картинку" class="form__input form__cards_type_link" name="profilePlaceLink" id="profile_place_link">
+          <button type="submit" class="form__cards-submit">Создать</button>
+        </form>
+      </div>
+    </div>
+    <template>
+      <div class="place">
+        <div class="place__images">
+          <img src="./images/karachaevsk.png" class="place__img" alt="карачаевск">
+          <img src="./images/trash.svg" class="place__trash" alt="удалить">
+        </div>
+        <div class="place__content">
+          <h2 class="place__title">Карачаевск</h2>
+          <button type="button" class="place__like"></button>
+        </div>
+      </div>
+    </template>
     <script src="./scripts/index.js"></script>
   </body>
 </html>
