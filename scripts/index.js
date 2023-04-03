@@ -13,17 +13,15 @@ let formElement = document.querySelector('.form');
 let nameInput = formElement.querySelector('.form__input_type_name');
 let jobInput = formElement.querySelector('.form__input_type_job');
 
-let formCards = document.querySelector('.form__cards');
-let placeName = formCards.querySelector('.form__cards-input_type_name');
-let placeLink = formCards.querySelector('.form__cards-input_type_link');
+const formCards = document.querySelector('.form__cards');
+const editCardsForm = formCards.querySelector('.form__cards-submit');
 
 let likePlace = document.querySelector('.place__like');
 let likePlaceActive = document.querySelector('.place__like_active');
 
 const templateElements = document.getElementById('template__elements');
 const cardPlaces = document.querySelector('.places');
-const formCardsTypeName = document.querySelector('.form__cards_type_name');
-const formCardsTypeLink = document.querySelector('.form__cards_type_link');
+
 
 
 const initialCards = [
@@ -74,7 +72,6 @@ const createImageElement = (imageData) => {
 
   likeButton.addEventListener('click', () => {
     likeButton.classList.toggle('.place__like_active');
-
   });
 
   return imageElement;
@@ -89,18 +86,11 @@ initialCards.forEach((cards) => {
   renderImageElement(element);
 });
 
-
-
-
-
-
 addButton.addEventListener('click', () => {
   popupCards.classList.add('popup_opened');
 });
 
-closeAddButton.addEventListener('click', () => {
-  popupCards.classList.remove('popup_opened');
-});
+closeAddButton.addEventListener('click', closeCardPopup);
 
 editButton.addEventListener('click', function popupOpen() {
   popupProfile.classList.add('popup_opened');
@@ -120,7 +110,22 @@ function handleFormSubmit (evt) {
 function handlEditCardsSubmit (evt) {
   evt.preventDefault();
 
+  const inputNameCard = formCards.querySelector('.form__cards_type_name');
+  const inputLinkCard = formCards.querySelector('.form__cards_type_link');
+
+  const name = inputNameCard.value;
+  const link = inputLinkCard.value;
+
+  const cardsData = {
+      name,
+      link
+  };
+
+  renderImageElement(createImageElement(cardsData));
+  closeCardPopup ();
 };
+
+formCards.addEventListener('submit', handlEditCardsSubmit);
 
 formElement.addEventListener('submit', handleFormSubmit); 
 
@@ -128,6 +133,8 @@ function popupClose() {
   popupProfile.classList.remove('popup_opened');
 };
 
-
+function closeCardPopup () {
+  popupCards.classList.remove('popup_opened');
+};
 
 
