@@ -29,57 +29,7 @@
           <button type="button" class="profile__add-button"></button>
       </section>
       <section class="places">
-
-        <div class="place">
-          <div class="place__images">
-            <img src="./images/elbrus.png" class="place__img" alt="Гора Эльбрус">
-            <img src="./images/trash.svg" class="place__trash" alt="удалить">
-          </div>
-          <div class="place__content">
-            <h2 class="place__title">Гора Эльбрус</h2>
-            <button type="button" class="place__like"></button>
-          </div>
-        </div>
-        <div class="place">
-          <div class="place__images">
-            <img src="./images/dombai.png" class="place__img" alt="Домбай">
-            <img src="./images/trash.svg" class="place__trash" alt="удалить">
-          </div>
-          <div class="place__content">
-            <h2 class="place__title">Домбай</h2>
-            <button type="button" class="place__like"></button>
-          </div>
-        </div>
-        <div class="place">
-          <div class="place__images">
-            <img src="./images/elbrus.png" class="place__img" alt="Гора Эльбрус">
-            <img src="./images/trash.svg" class="place__trash" alt="удалить">
-          </div>
-          <div class="place__content">
-            <h2 class="place__title">Гора Эльбрус</h2>
-            <button type="button" class="place__like"></button>
-          </div>
-        </div>
-        <div class="place">
-          <div class="place__images">
-            <img src="./images/dombai.png" class="place__img" alt="Домбай">
-            <img src="./images/trash.svg" class="place__trash" alt="удалить">
-          </div>
-          <div class="place__content">
-            <h2 class="place__title">Домбай</h2>
-            <button type="button" class="place__like"></button>
-          </div>
-        </div>
-        <div class="place">
-          <div class="place__images">
-            <img src="./images/karachaevsk.png" class="place__img" alt="карачаевск">
-            <img src="./images/trash.svg" class="place__trash" alt="удалить">
-          </div>
-          <div class="place__content">
-            <h2 class="place__title">Карачаевск</h2>
-            <button type="button" class="place__like"></button>
-          </div>
-        </div>
+        
       </section>
     </main>
     <footer class="footer">
@@ -107,7 +57,14 @@
         </form>
       </div>
     </div>
-    <template>
+    <div class="popup__image">
+      <div class="popup__image-container">
+        <button class="popup__image-close-button" type="button"></button>
+        <div class="popup__img"></div>
+        <div class="popup__title"></div>
+      </div>
+    </div>
+    <template id="template__elements">
       <div class="place">
         <div class="place__images">
           <img src="./images/karachaevsk.png" class="place__img" alt="карачаевск">
