@@ -1,0 +1,10 @@
+.popup__image-card {
+
+}
+
+@media (min-width: 1024px) {
+    .popup__image-card {
+        max-width: 75vw;
+        max-height: 75vh;
+    }
+}
