@@ -1,6 +1,5 @@
 .popup__cards { 
-    visibility: hidden;
-    opacity: 0;
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
