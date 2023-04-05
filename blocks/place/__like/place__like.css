@@ -3,13 +3,14 @@
     padding-top: 5px;
     width: 22px;
     height: 19px;
-    transition: opacity 0.4s;
+    transition: 0.4s;
     transform: translate(0, 7px);
     cursor: pointer;
-    background-image: url(../../../images/like.svg);
+    background-image: url(../../../images/Vector.svg);
     background-color: #FFFFFF;
     border: none;
     background-repeat: no-repeat;
+    
 }
 
 .place__like:hover {

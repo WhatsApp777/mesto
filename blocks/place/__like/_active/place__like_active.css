@@ -1,3 +1,4 @@
 .place__like_active {
-    background-color: url(../../../images/Union.svg);
+    opacity: 1;
+    background-image: url(../../../images/Union.png);
 }

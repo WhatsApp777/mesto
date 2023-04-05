@@ -1,14 +1,9 @@
 .popup__image-container {
     position: relative;
-    min-width: 240px;
-    min-height: 321px;
-    border-radius: 10px;
-    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    background-color: aliceblue;
     z-index: 11;
-}
-
-@media (min-width: 1024px) {
-    .popup__image-container {
-
-    }
 }

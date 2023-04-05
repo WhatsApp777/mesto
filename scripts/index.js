@@ -6,12 +6,11 @@ const popupProfile = document.querySelector('.popup');
 const editButton = document.querySelector('.profile__edit-button');
 const closeButton = document.querySelector('.popup__close-button');
 
-
-const templateElements = document.getElementById('template__elements');
 const popupImage = document.querySelector('.popup__image');
 const closeCardButton = popupImage.querySelector('.popup__image-close-button');
-const openedCardButton = document.querySelector('.place__img');
-console.log(openedCardButton);
+
+const templateElements = document.getElementById('template__elements');
+
 
  
 const nameProfile = document.querySelector('.profile__title');
@@ -56,17 +55,27 @@ const initialCards = [
 
 const createImageElement = (imageData) => {
   const imageElement = templateElements.content.querySelector('.place').cloneNode(true);
-
   const cardName = imageElement.querySelector('.place__title');
   const cardImage = imageElement.querySelector('.place__img');
+  const closeImagePopup = document.querySelector('.popup__image-close-button');
+  const deleteButton = imageElement.querySelector('.place__trash');
+  const likeButton = imageElement.querySelector('.place__like');
+  let popupImageCard = popupImage.querySelector('.popup__image-card');
 
   cardName.textContent = imageData.name;
   cardImage.src = imageData.link;
   cardImage.alt = imageData.name;
 
-  const deleteButton = imageElement.querySelector('.place__trash');
-  const likeButton = imageElement.querySelector('.place__like');
-  
+  cardImage.addEventListener('click', () => {
+    popupImage.classList.add('popup_opened');
+
+    popupImageCard = initialCards.link;
+  });
+
+  closeImagePopup.addEventListener('click', () => {
+    popupImage.classList.remove('popup_opened');
+  });
+
   deleteButton.addEventListener('click', () => {
     imageElement.remove();
   });
@@ -96,18 +105,6 @@ editButton.addEventListener('click', function popupOpen() {
   nameInput.value = nameProfile.textContent;
   jobInput.value = jobProfile.textContent;
 });
-
-
-
-
-openedCardButton.addEventListener('click', () => {
-  popupImage.classList.add('popup_opened');
-  console.log('click')
-});
-
-
-
-
 
 closeButton.addEventListener('click', popupClose);
 closeAddButton.addEventListener('click', closeCardPopup);
@@ -148,3 +145,4 @@ function popupClose() {
 function closeCardPopup() {
   popupCards.classList.remove('popup_opened');
 };
+
