@@ -50,7 +50,6 @@ const initialCards = [
   }
 ];
 
-
 const createImageElement = (imageData) => {
   const imageElement = templateElements.content.querySelector('.place').cloneNode(true);
   const cardName = imageElement.querySelector('.place__title');
@@ -58,7 +57,7 @@ const createImageElement = (imageData) => {
   const closeImagePopup = document.querySelector('.popup__image-close-button');
   const deleteButton = imageElement.querySelector('.place__trash');
   const likeButton = imageElement.querySelector('.place__like');
-  
+
   cardName.textContent = imageData.name;
   cardImage.src = imageData.link;
   cardImage.alt = imageData.name;
@@ -116,6 +115,7 @@ function handleFormSubmit (evt) {
 
   nameProfile.textContent = nameInput.value;
   jobProfile.textContent = jobInput.value;
+
   popupClose();
 };
 
@@ -134,6 +134,7 @@ function handlEditCardsSubmit (evt) {
   };
 
   renderImageElement(createImageElement(cardsData));
+  
   closeCardPopup();
 };
 
