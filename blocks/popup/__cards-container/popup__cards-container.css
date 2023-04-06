@@ -4,7 +4,6 @@
     min-height: 322px;
     border-radius: 10px;
     background: #FFFFFF;
-    z-index: 11;
 }
 
 @media (min-width: 1024px) {

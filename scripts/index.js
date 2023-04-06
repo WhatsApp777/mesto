@@ -1,16 +1,12 @@
 const popupCards = document.querySelector('.popup__cards');
 const addButton = document.querySelector('.profile__add-button');
 const closeAddButton = popupCards.querySelector('.popup__cards-close-button');
-
 const popupProfile = document.querySelector('.popup');
 const editButton = document.querySelector('.profile__edit-button');
 const closeButton = document.querySelector('.popup__close-button');
-
 const popupImage = document.querySelector('.popup__image');
 const closeCardButton = popupImage.querySelector('.popup__image-close-button');
-
 const templateElements = document.getElementById('template__elements');
- 
 const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 
@@ -20,7 +16,6 @@ let jobInput = formElement.querySelector('.form__input_type_job');
 
 const formCards = document.querySelector('.form__cards');
 const editCardsForm = formCards.querySelector('.form__cards-submit');
-
 const cardPlaces = document.querySelector('.places');
 
 const initialCards = [
@@ -148,4 +143,3 @@ function popupClose() {
 function closeCardPopup() {
   popupCards.classList.remove('popup_opened');
 };
-
