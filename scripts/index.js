@@ -10,8 +10,6 @@ const popupImage = document.querySelector('.popup__image');
 const closeCardButton = popupImage.querySelector('.popup__image-close-button');
 
 const templateElements = document.getElementById('template__elements');
-
-
  
 const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
@@ -73,6 +71,7 @@ const createImageElement = (imageData) => {
 
     popupImageCard.src = imageData.link;
     popupImageTitle.textContent = imageData.name;
+    popupImageCard.alt = imageData.name;
   });
 
   closeImagePopup.addEventListener('click', () => {
