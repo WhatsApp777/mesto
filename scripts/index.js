@@ -60,8 +60,7 @@ const createImageElement = (imageData) => {
   const closeImagePopup = document.querySelector('.popup__image-close-button');
   const deleteButton = imageElement.querySelector('.place__trash');
   const likeButton = imageElement.querySelector('.place__like');
-  let popupImageCard = popupImage.querySelector('.popup__image-card');
-
+  
   cardName.textContent = imageData.name;
   cardImage.src = imageData.link;
   cardImage.alt = imageData.name;
@@ -69,7 +68,11 @@ const createImageElement = (imageData) => {
   cardImage.addEventListener('click', () => {
     popupImage.classList.add('popup_opened');
 
-    popupImageCard = initialCards.link;
+    const popupImageCard = document.querySelector('.popup__image-card');
+    const popupImageTitle = document.querySelector('.popup__image-title');
+
+    popupImageCard.src = imageData.link;
+    popupImageTitle.textContent = imageData.name;
   });
 
   closeImagePopup.addEventListener('click', () => {

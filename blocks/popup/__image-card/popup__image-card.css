@@ -1,4 +1,12 @@
 .popup__image-card {
     width: 75vw;
     height: 75vh;
+    object-fit: contain;
+}
+
+@media (min-width: 1024px) {
+    .popup__image-card {
+        width: 75vw;
+        height: 75vh;
+    }
 }
