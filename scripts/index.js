@@ -117,8 +117,8 @@ function handleFormSubmit (evt) {
 function handlEditCardsSubmit (evt) {
   evt.preventDefault();
 
-  const inputNameCard = formCards.querySelector('.form__cards_type_name');
-  const inputLinkCard = formCards.querySelector('.form__cards_type_link');
+  const inputNameCard = formCards.querySelector('.form__input_type_name');
+  const inputLinkCard = formCards.querySelector('.form__input_type_link');
 
   const name = inputNameCard.value;
   const link = inputLinkCard.value;
