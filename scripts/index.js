@@ -1,7 +1,9 @@
-const popupCards = document.querySelector('.popup__cards');
-const addButton = document.querySelector('.profile__add-button');
-const closeAddButton = popupCards.querySelector('.popup__cards-close-button');
 const popupProfile = document.querySelector('.popup');
+const popupCards = document.querySelector('.popup_type_cards');
+const addButton = document.querySelector('.profile__add-button');
+const closeAddButton = document.querySelector('.popup__cards-close-button');
+
+
 const editButton = document.querySelector('.profile__edit-button');
 const closeButton = document.querySelector('.popup__close-button');
 const popupImage = document.querySelector('.popup__image');
