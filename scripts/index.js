@@ -6,7 +6,7 @@ const closeAddButton = document.querySelector('.popup__cards-close-button');
 
 const editButton = document.querySelector('.profile__edit-button');
 const closeButton = document.querySelector('.popup__close-button');
-const popupImage = document.querySelector('.popup__image');
+const popupImage = document.querySelector('.popup_type_image');
 const closeCardButton = popupImage.querySelector('.popup__image-close-button');
 const templateElements = document.getElementById('template__elements');
 const nameProfile = document.querySelector('.profile__title');
