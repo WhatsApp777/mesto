@@ -16,8 +16,8 @@ let formElement = document.querySelector('.form');
 let nameInput = formElement.querySelector('.form__input_type_name');
 let jobInput = formElement.querySelector('.form__input_type_job');
 
-const formCards = document.querySelector('.form__cards');
-const editCardsForm = formCards.querySelector('.form__cards-submit');
+
+const editCardsForm = formElement.querySelector('.form__cards-submit');
 const cardPlaces = document.querySelector('.places');
 
 const initialCards = [
@@ -119,8 +119,8 @@ function handleFormSubmit (evt) {
 function handlEditCardsSubmit (evt) {
   evt.preventDefault();
 
-  const inputNameCard = formCards.querySelector('.form__input_type_name');
-  const inputLinkCard = formCards.querySelector('.form__input_type_link');
+  const inputNameCard = formElement.querySelector('.form__input_type_name');
+  const inputLinkCard = formElement.querySelector('.form__input_type_link');
 
   const name = inputNameCard.value;
   const link = inputLinkCard.value;
@@ -136,7 +136,7 @@ function handlEditCardsSubmit (evt) {
 };
 
 formElement.addEventListener('submit', handleFormSubmit); 
-formCards.addEventListener('submit', handlEditCardsSubmit);
+formElement.addEventListener('submit', handlEditCardsSubmit);
 
 function popupClose() {
   popupProfile.classList.remove('popup_opened');
