@@ -34,10 +34,10 @@
     <footer class="footer">
       <h2 class="footer__author">&copy; 2023 Mesto Russia</h2>
     </footer>
-    <div class="popup">
+    <div class="popup popup_type_profile">
       <div class="popup__container">
         <button class="popup__close-button" type="button"></button>
-        <form class="form" name="editProfile">
+        <form class="form form_type_profile" name="editProfile">
           <h2 class="form__title">Редактировать профиль</h2>
           <input type="text" placeholder="Ваше имя" class="form__input form__input_type_name" name="profileName" id="profile_name">
           <input type="text" placeholder="Ваша профессия" class="form__input form__input_type_job" name="profileJob" id="profile_job">
@@ -48,10 +48,10 @@
     <div class="popup popup_type_cards">
       <div class="popup__cards-container">
         <button class="popup__cards-close-button" type="button"></button>
-        <form class="form" name="addCards">
+        <form class="form form_type_cards" name="addCards">
           <h2 class="form__cards-title">Новое место</h2>
-          <input type="text" placeholder="Название" class="form__input form__input_type_name" name="profilePlaceName" id="profile_place_name">
-          <input type="text" placeholder="Ссылка на картинку" class="form__input form__input_type_link" name="profilePlaceLink" id="profile_place_link">
+          <input type="text" placeholder="Название" class="form__input form__input_type_title" name="profileTitle" id="profile_title">
+          <input type="text" placeholder="Ссылка на картинку" class="form__input form__input_type_link" name="profileLink" id="profile_link">
           <button type="submit" class="form__cards-submit">Создать</button>
         </form>
       </div>
