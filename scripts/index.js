@@ -15,7 +15,6 @@ const templateElements = document.getElementById('template__elements');
 const nameProfile = document.querySelector('.profile__title');
 const jobProfile = document.querySelector('.profile__subtitle');
 
-const formElement = document.querySelector('.form');
 const formProfile = document.querySelector('.form_type_profile');
 const formCards = document.querySelector('.form_type_cards');
 
@@ -24,11 +23,11 @@ const jobInput = formProfile.querySelector('.form__input_type_job');
 
 const inputNameCard = formCards.querySelector('.form__input_type_title');
 const inputLinkCard = formCards.querySelector('.form__input_type_link');
- 
+const formSubmit = document.querySelector('.form__submit');
 const cardPlaces = document.querySelector('.places');
 
-nameInput.value = nameProfile.textContent; 
-jobInput.value = jobProfile.textContent; 
+const buttonCardSubmit = document.querySelector('.form__submit_type_cards');
+const buttonProfileSubmit = document.querySelector('.form__submit_type_profile');
 
 const initialCards = [ 
   { 
@@ -62,7 +61,7 @@ const createImageElement = (imageData) => {
   const cardName = imageElement.querySelector('.place__title'); 
   const cardImage = imageElement.querySelector('.place__img'); 
   const buttonDeleteTrash = imageElement.querySelector('.place__trash'); 
-  const buttonPlaceLike = imageElement.querySelector('.place__like'); 
+  const buttonPlaceLike = imageElement.querySelector('.place__like');
  
   cardName.textContent = imageData.name; 
   cardImage.src = imageData.link; 
@@ -76,8 +75,6 @@ const createImageElement = (imageData) => {
     popupImageCard.alt = imageData.name;
   });
 
-  buttonImageClose.addEventListener('click', () => {closePopup(popupImage)}); 
- 
   buttonDeleteTrash.addEventListener('click', () => {imageElement.remove()}); 
  
   buttonPlaceLike.addEventListener('click', (evt) => { 
@@ -96,42 +93,69 @@ initialCards.forEach((cards) => {
   renderImageElement(element); 
 }); 
  
-function handleFormSubmit (evt) { 
-  evt.preventDefault(); 
- 
+function handleFormSubmit (event) { 
+  event.preventDefault();
   nameProfile.textContent = nameInput.value; 
   jobProfile.textContent = jobInput.value; 
- 
   closePopup(popupProfile); 
 }; 
- 
-function handlEditCardsSubmit (evt) { 
-  evt.preventDefault(); 
 
+function handlEditCardsSubmit (event) {
+  event.preventDefault();
   const name = inputNameCard.value; 
   const link = inputLinkCard.value; 
- 
   const cardsData = { 
     name, 
     link 
   }; 
- 
+  
   renderImageElement(createImageElement(cardsData)); 
-   
+  event.target.reset();
   closePopup(popupCards); 
 }; 
 
 formProfile.addEventListener('submit', handleFormSubmit); 
 formCards.addEventListener('submit', handlEditCardsSubmit); 
-buttonAddCard.addEventListener('click', () => {openPopup(popupCards)});
-buttonEditProfile.addEventListener('click', () => {openPopup(popupProfile)});
+buttonAddCard.addEventListener('click', openCardPopup);
+buttonEditProfile.addEventListener('click', openProfilePopup);
 buttonEditClose.addEventListener('click', () => {closePopup(popupProfile)}); 
 buttonAddClose.addEventListener('click', () => {closePopup(popupCards)}); 
+buttonImageClose.addEventListener('click', () => {closePopup(popupImage)}); 
+
+function openProfilePopup() {
+  enableButton(buttonProfileSubmit);
+  nameInput.value = nameProfile.textContent; 
+  jobInput.value = jobProfile.textContent; 
+  openPopup(popupProfile);
+}
+
+function openCardPopup() {
+  disableButton(buttonCardSubmit);
+  openPopup(popupCards);
+};
+
+function closeByEscape(event) {
+  if (event.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  };
+};
+
+function closeByOverlay(event) {
+  if (event.target === event.currentTarget) {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+  };
+};
 
 function openPopup(popup) { 
-  popup.classList.add('popup_opened'); 
-}; 
+  popup.classList.add('popup_opened');
+  popup.addEventListener('click', closeByOverlay);
+  popup.addEventListener('keydown', closeByEscape);
+};
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  popup.removeEventListener('click', closeByOverlay);
+  popup.removeEventListener('keydown', closeByEscape);
 };

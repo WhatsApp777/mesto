@@ -24,5 +24,6 @@
       right: -39px;
       height: 32px;
       width: 32px;
+      transition: opacity 0.4s;
   } 
 }

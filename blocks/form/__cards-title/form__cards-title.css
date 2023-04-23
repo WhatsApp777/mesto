@@ -1,7 +1,7 @@
 .form__cards-title {
     display: flex;
     align-items: center;
-    transform: translate(1px, 4px);
+    transform: translate(1px, -1px);
     margin: 0;
     padding: 22px 22px 0;
     font-weight: 900;
