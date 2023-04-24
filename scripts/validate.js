@@ -68,12 +68,3 @@ function checkInputValidity(config, input){
         showInputError(config, input, inputErrorClass);
     };
 };
-
-enableValidation({
-    formSelector: '.form',
-    inputSelector: '.form__input',
-    submitButtonSelector: '.form__submit',
-    inactiveButtonClass: 'form__submit_disable',
-    inputErrorClass: 'form__input_invalid',
-    errorClass: 'form__error_visible'
-});
