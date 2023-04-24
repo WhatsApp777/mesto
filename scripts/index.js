@@ -123,14 +123,16 @@ buttonAddClose.addEventListener('click', () => {closePopup(popupCards)});
 buttonImageClose.addEventListener('click', () => {closePopup(popupImage)}); 
 
 function openProfilePopup() {
-  enableButton(buttonProfileSubmit);
+  buttonProfileSubmit.classList.remove('form__submit_disable');
+  buttonProfileSubmit.removeAttribute('disabled');
   nameInput.value = nameProfile.textContent; 
   jobInput.value = jobProfile.textContent; 
   openPopup(popupProfile);
 }
 
 function openCardPopup() {
-  disableButton(buttonCardSubmit);
+  buttonCardSubmit.classList.add('form__submit_disable');
+  buttonCardSubmit.setAttribute('disabled', true);
   openPopup(popupCards);
 };
 
@@ -143,19 +145,18 @@ function closeByEscape(event) {
 
 function closeByOverlay(event) {
   if (event.target === event.currentTarget) {
-    const popupOpened = document.querySelector('.popup_opened');
-    closePopup(popupOpened);
+    closePopup(event.target);
   };
 };
 
 function openPopup(popup) { 
   popup.classList.add('popup_opened');
   popup.addEventListener('click', closeByOverlay);
-  popup.addEventListener('keydown', closeByEscape);
+  document.addEventListener('keydown', closeByEscape);
 };
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   popup.removeEventListener('click', closeByOverlay);
-  popup.removeEventListener('keydown', closeByEscape);
+  document.removeEventListener('keydown', closeByEscape);
 };
