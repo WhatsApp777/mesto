@@ -1,15 +1,15 @@
 import { openPopup } from './utilites.js';
 import { popupImage } from './utilites.js';
+import { popupImageCard, popupImageTitle } from './index.js';
 
 class Card {
 
-  constructor(data, templateSelector){
+  constructor(data, template){
     this._name = data.name;
     this._title = data.link;
-    this._templateSelector = templateSelector;
-    this._template = document.getElementById('template__elements').content;
-    this._popupImageCard = document.querySelector('.popup__image-card');
-    this._popupImageTitle = document.querySelector('.popup__image-title');
+    this._template = template;
+    this._popupImageCard = popupImageCard;
+    this._popupImageTitle = popupImageTitle;
   }
 
   _getTemplate = () => {
