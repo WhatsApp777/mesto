@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./pages/index.css">
     <title lang="en">Mesto</title>
     <link rel="icon" href="./images/mesto.svg">
     <meta name="description" content="Mesto">
@@ -12,12 +11,12 @@
   </head>
   <body class="page">
     <header class="header">
-      <img class="header__logo" src="./images/logo.svg" alt="логотип">
+      <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="логотип">
     </header>
     <main class="content">
       <section class="profile">
         <div class="profile__profile-info">
-          <img src="./images/avatar1.jpg" class="profile__avatar" alt="фото">
+          <img src="<%=require('./images/avatar1.jpg')%>" class="profile__avatar" alt="фото">
           <div class="profile__table">
             <div class="profile__info">
               <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -63,7 +62,7 @@
     <div class="popup popup_type_image">
       <div class="popup__image-container">
         <button class="popup__close-button popup__close-button_type_image" type="button"></button>
-        <img src="./images/dombai.png" class="popup__image-card" alt="Домбай">
+        <img class="popup__image-card">
         <h2 class="popup__image-title">Домбай</h2>
       </div>
     </div>
@@ -71,7 +70,7 @@
       <div class="place">
         <div class="place__images">
           <img class="place__img">
-          <img src="./images/trash.svg" class="place__trash" alt="удалить">
+          <img src="<%=require('./images/trash.svg')%>" class="place__trash" alt="удалить">
         </div>
         <div class="place__content">
           <h2 class="place__title"></h2>
@@ -79,6 +78,5 @@
         </div>
       </div>
     </template>
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>
