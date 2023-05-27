@@ -2,8 +2,7 @@ export default class FormValidator {
  
     constructor(config, formElement) { 
         this._formElement = formElement; 
-        this._config = config; 
-        this._formSelector = document.querySelector(config.formSelector); 
+        this._config = config;
         this._inputSelector = config.inputSelector; 
         this._submitButtonSelector = config.submitButtonSelector; 
         this._inactiveButtonClass = config.inactiveButtonClass; 
@@ -12,14 +11,14 @@ export default class FormValidator {
         this._buttonElement = this._formElement.querySelector(this._submitButtonSelector); 
     };
 
-    _removeInputError = () => { 
-        this._input.classList.remove(this._inputErrorClass); 
+    _removeInputError = (input) => { 
+        input.classList.remove(this._inputErrorClass); 
         this._errorElement.classList.remove(this._errorClass); 
         this._errorElement.textContent = ''; 
     }; 
 
-    _showInputError = () => { 
-        this._input.classList.add(this._inputErrorClass); 
+    _showInputError = (input) => { 
+        input.classList.add(this._inputErrorClass); 
         this._errorElement.classList.add(this._errorClass); 
         this._errorElement.textContent = this._input.validationMessage; 
     };             
@@ -28,9 +27,9 @@ export default class FormValidator {
         this._input = input; 
         this._errorElement = document.querySelector(`#error-${input.id}`); 
         if (!this._input.validity.valid){ 
-            this._showInputError(); 
+            this._showInputError(input); 
         } else { 
-            this._removeInputError(); 
+            this._removeInputError(input); 
         } 
     };
 
@@ -45,14 +44,14 @@ export default class FormValidator {
     }); 
     };
  
-    _hasValidInput = () => { 
+    _hasInvalidInput = () => { 
         return this._inputsArray.some((input) => { 
             return !input.validity.valid; 
     }); 
     }; 
  
     _toggleButtonValidity = () => { 
-        if (this._hasValidInput(this._inputsArray)){ 
+        if (this._hasInvalidInput(this._inputsArray)){ 
             this.disableButton();
         } else { 
             this.enableButton();

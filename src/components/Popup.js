@@ -5,6 +5,8 @@ export default class Popup {
         this._popupsCloseButtons = this._popup.querySelector('.popup__close-button');
         this._handleEscClose = this._handleEscClose.bind(this);
         this._closeByOverlay = this._closeByOverlay.bind(this);
+        this._popupImageCard = this._popup.querySelector('.popup__image-card');
+        this._popupImageTitle = this._popup.querySelector('.popup__image-title');
     }
 
     _handleEscClose(evt) {
@@ -31,6 +33,6 @@ export default class Popup {
 
     setEventListeners() {
         this._popup.addEventListener('click', this._closeByOverlay);
-        this._popupsCloseButtons.addEventListener('click', () => this.close()) ;
+        this._popupsCloseButtons.addEventListener('click', this.close.bind(this));
     }
 }
