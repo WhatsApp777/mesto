@@ -1,11 +1,13 @@
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
 import Section from '../components/Section.js';
+
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
+import PopupWithConfirmation from '../components/PopupWithConfirmation.js';
+import Api from '../components/Api.js';
 import UserInfo from '../components/UserInfo.js';
 import '../pages/index.css';
-import { initialCards } from '../utils/constants.js';
 import { config } from '../utils/constants.js';
 import {
     buttonAddCard,
@@ -14,7 +16,36 @@ import {
     formCards,
     nameInput,
     jobInput,
+    
 } from '../utils/constants.js';
+
+const userInfo = new UserInfo(
+  {
+    name: '.profile__title',
+    job: '.profile__subtitle',
+    avatar: '.profile__avatar'
+  });
+
+const api = new Api({
+  url: 'https://mesto.nomoreparties.co/v1/cohort-68',
+  headers: {
+    authorization: 'dc5ffe71-d4a2-4ae4-8d8f-113b04708a8c',
+    'Content-Type': 'application/json'
+  }
+});
+
+let userId;
+
+api.getAppInfo()
+  .then((cards, userInformation) => {
+    cardsData.renderer(cards);
+    userInfo.setUserInfo(userInformation);
+    userId = userInformation._id;
+  })
+  .catch((err) => {
+    console.log(err)
+  })
+
 
 const profileValidator = new FormValidator(config, formProfile);
 profileValidator.enableValidation();
@@ -24,17 +55,17 @@ cardValidator.enableValidation();
 const popupWithImage = new PopupWithImage('.popup_type_image');
 popupWithImage.setEventListeners();
 
-const popupWithCard = new PopupWithForm('.popup_type_cards', handleCardFormSubmit)
+const popupWithCard = new PopupWithForm('.popup_type_cards', handleCardFormSubmit);
 popupWithCard.setEventListeners();
 
-const popupWithProfile = new PopupWithForm('.popup_type_profile', handleProfileFormSubmit)
+const popupWithProfile = new PopupWithForm('.popup_type_profile', handleProfileFormSubmit);
 popupWithProfile.setEventListeners();
 
-const userInfo = new UserInfo(
-  {
-    name: '.profile__title',
-    job: '.profile__subtitle'
-  });
+const popupWithCardDelete = new PopupWithConfirmation()
+popupWithCardDelete.setEventListeners();
+
+
+
 
 function handleProfileFormSubmit (data) { 
   userInfo.setUserInfo(data.profileName, data.profileJob);
@@ -64,21 +95,31 @@ function openProfilePopup() {
   nameInput.value = name; 
   jobInput.value = job; 
   popupWithProfile.open();
-}
+};
 
 function createCardElement(card) {
   const templateSelector = document.getElementById('template__elements').content;
-  const cardElement = new Card(card, templateSelector, handleCardClick);
+  const cardElement = new Card({
+    card, 
+    templateSelector, 
+    handleCardClick, 
+    handleCardDeleteSubmit, 
+    userId: userId, 
+    api: api
+    });
   const newCard = cardElement.generateCard();
   return newCard;
 };
 
 function handleCardClick(name, link) {
   popupWithImage.open(name, link); 
-}
+};
+
+function handleCardDeleteSubmit(card, cardId) {
+  popupWithCardDelete.open(card, cardId);
+};
 
 const cardSection = new Section({
-  items: initialCards,
   renderer: (cardData) => createCardElement(cardData),
 }, '.places');
 
