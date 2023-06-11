@@ -26,7 +26,7 @@ const api = new Api({
     'Content-Type': 'application/json'
   }
 });
-let userId;
+
 api.getAppInfo() 
   .then((cardData, userInformation) => {
     cardSection.renderer(cardData);
@@ -50,11 +50,6 @@ const cardSection = new Section({
 
 
 
-
-
-
-
-
 const profileValidator = new FormValidator(config, formProfile);
 profileValidator.enableValidation();
 const cardValidator = new FormValidator(config, formCards);
@@ -72,8 +67,21 @@ popupWithProfile.setEventListeners();
 const popupWithCardDelete = new PopupWithConfirmation()
 popupWithCardDelete.setEventListeners();
 
+const popupWithAvatarChaange = new PopupWithForm('popup_type_update-avatar', handleAvatarCgangeFormSubmit)
+popupWithAvatarChaange.setEventListeners();
 
 
+function handleAvatarCgangeFormSubmit (data) {
+
+  
+/*   api.changeAvatar(data)
+    .then((data) => {
+      avatar.src = data.avatar
+    })
+    .catch((err) => {
+      console.log(`Ошибка: ${err}`)
+    }) */
+}
 
 function handleProfileFormSubmit (data) { 
   userInfo.setUserInfo(data.profileName, data.profileJob);
@@ -88,6 +96,10 @@ function handleProfileFormSubmit (data) {
   }; 
   cardSection.addItem(createCardElement(cardsData));
 };
+
+
+
+
 
 buttonAddCard.addEventListener('click', openCardPopup); 
 buttonEditProfile.addEventListener('click', openProfilePopup);
