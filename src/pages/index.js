@@ -19,13 +19,6 @@ import {
     
 } from '../utils/constants.js';
 
-const userInfo = new UserInfo(
-  {
-    name: '.profile__title',
-    job: '.profile__subtitle',
-    avatar: '.profile__avatar'
-  });
-
 const api = new Api({
   url: 'https://mesto.nomoreparties.co/v1/cohort-68',
   headers: {
@@ -33,18 +26,33 @@ const api = new Api({
     'Content-Type': 'application/json'
   }
 });
-
 let userId;
-
-api.getAppInfo()
-  .then((cards, userInformation) => {
-    cardsData.renderer(cards);
+api.getAppInfo() 
+  .then((cardData, userInformation) => {
+    cardSection.renderer(cardData);
     userInfo.setUserInfo(userInformation);
     userId = userInformation._id;
   })
   .catch((err) => {
-    console.log(err)
-  })
+    console.log(`Ошибка: ${err}`)
+  });
+
+const userInfo = new UserInfo(
+  {
+    name: '.profile__title',
+    job: '.profile__subtitle',
+    avatar: '.profile__avatar'
+  });
+
+const cardSection = new Section({
+  renderer: (cardData) => createCardElement(cardData),
+}, '.places');
+
+
+
+
+
+
 
 
 const profileValidator = new FormValidator(config, formProfile);
@@ -119,8 +127,6 @@ function handleCardDeleteSubmit(card, cardId) {
   popupWithCardDelete.open(card, cardId);
 };
 
-const cardSection = new Section({
-  renderer: (cardData) => createCardElement(cardData),
-}, '.places');
+
 
 cardSection.renderer();
