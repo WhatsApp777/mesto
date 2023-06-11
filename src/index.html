@@ -49,6 +49,7 @@
         </form>
       </div>
     </div>
+
     <div class="popup popup_type_cards">
       <div class="popup__cards-container">
         <button class="popup__close-button popup__close-button_type_card" type="button"></button>
@@ -62,6 +63,7 @@
         </form>
       </div>
     </div>
+
     <div class="popup popup_type_image">
       <div class="popup__image-container">
         <button class="popup__close-button popup__close-button_type_image" type="button"></button>
@@ -69,6 +71,7 @@
         <h2 class="popup__image-title">Домбай</h2>
       </div>
     </div>
+
     <div class="popup popup_type_delete-card">
       <div class="popup__delete-card-container">
         <button class="popup__close-button popup__close-button_type_delete-card" typy="button"></button>
@@ -76,6 +79,19 @@
         <button type="submit" class="form__submit form__submit_type_delete-card">Да</button>
       </div>
     </div>
+
+    <div class="popup popup_type_update-avatar">
+      <div class="popup__update-avatar-container">
+        <button class="popup__close-button popup__close-button_type_update-avatar" typy="button"></button>
+        <form class="form form_type_update-avatar" name="addCards" novalidate>
+          <h2 class="form__title form__title_type_update-avatar">Обновить аватар</h2>
+          <input type="URL" placeholder="Ссылка на картинку" class="form__input form__input_type_update-avatar" name="AvatarLink" id="AvatarLink" minlength="2" required>
+          <span id="error-AvatarLink" class="form__error"></span>
+          <button type="submit" class="form__submit form__submit_type_update-avatar">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
     <template id="template__elements">
       <div class="place">
         <div class="place__images">
