@@ -17,6 +17,7 @@ module.exports = {
     port: 8080,
     compress: true
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
         {
@@ -41,10 +42,10 @@ module.exports = {
                filename: 'fonts/[name].[hash][ext]',
            }
         },
-        {
-            test: /\.js$/,
-            use: 'babel-loader',
-            exclude: '/node_modules/'
+         {
+             test: /\.js$/,
+             use: 'babel-loader',
+             exclude: '/node_modules/'
           }
       ],
   },

@@ -6,7 +6,7 @@ export default class Api {
 
     getUserInfo(){
         return fetch(`${this._url}/users/me`, {
-            metod: 'GET',
+            method: 'GET',
             headers: this._headers
         })
         .then(this._handleResponse);
@@ -14,19 +14,19 @@ export default class Api {
 
     getInitialCards(){
         return fetch(`${this._url}/cards`, {
-            metod: 'GET',
+            method: 'GET',
             headers: this._headers
         })
         .then(this._handleResponse);
     }
 
     getAppInfo(){
-        return Promise.all([this.getInitialCards(), this.getUserInfo()])
+        return Promise.all([this.getUserInfo(), this.getInitialCards()])
     }
 
-    editProfile(name, about){
+    editProfile({name, about}){
         return fetch(`${this._url}/users/me`, {
-            metod: 'PATCH',
+            method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
                 name: name,
@@ -36,9 +36,9 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    editCard(name, link){
+    editCard({ name, link }){
         return fetch(`${this._url}/cards`, {
-            metod: 'POST',
+            method: 'POST',
             headers: this._headers,
             body: JSON.stringify({
                 name: name,
@@ -50,7 +50,7 @@ export default class Api {
 
     deleteCard(cardId){
         return fetch(`${this._url}/cards/${cardId}`, {
-            metod: 'DELETE',
+            method: 'DELETE',
             headers: this._headers
         })
         .then(this._handleResponse);
@@ -58,15 +58,7 @@ export default class Api {
 
     like(cardId){
         return fetch(`${this._url}/cards/${cardId}/likes`, {
-            metod: 'PUT',
-            headers: this._headers
-        })
-        .then(this._handleResponse);
-    }
-
-    deleteLike(cardId){
-        return fetch(`${this._url}/cards/${cardId}/likes`, {
-            metod: 'DELETE',
+            method: 'PUT',
             headers: this._headers
         })
         .then(this._handleResponse);
@@ -74,7 +66,7 @@ export default class Api {
 
     removeLike(cardId){
         return fetch(`${this._url}/cards/${cardId}/likes`, {
-            metod: 'DELETE',
+            method: 'DELETE',
             headers: this._headers
         })
         .then(this._handleResponse);
@@ -82,7 +74,7 @@ export default class Api {
 
     changeAvatar(url){
         return fetch(`${this._url}/users/me/avatar`, {
-            metod: 'PATCH',
+            method: 'PATCH',
             headers: this._headers,
             body: JSON.stringify({
                 avatar: url
@@ -93,7 +85,7 @@ export default class Api {
 
     _handleResponse(res){
         if(res.ok){
-            res.json();
+            return res.json();
         } else {
             return Promise.reject(`Ошибка: ${res.status}`);
         }

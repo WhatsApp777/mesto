@@ -1,5 +1,6 @@
 export const buttonAddCard = document.querySelector('.profile__add-button');
 export const buttonEditProfile = document.querySelector('.profile__edit-button');
+export const buttonEditAvatar = document.querySelector('.profile__avatar-button'); // добавил кнопку открытия попапа редактирования аватара
 export const formProfile = document.querySelector('.form_type_profile');
 export const formCards = document.querySelector('.form_type_cards');
 

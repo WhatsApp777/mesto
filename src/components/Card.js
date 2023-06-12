@@ -1,6 +1,6 @@
 export default class Card {
 
-  constructor(data, templateSelector, handleCardClick, handleDeleteButtonCard, userId, api) {
+  constructor(data, templateSelector, handleCardClick, handleDeleteButtonCard, userId, api, handleOpenPopup) {
     this._name = data.name;
     this._title = data.link;
     this._template = templateSelector;
@@ -11,6 +11,11 @@ export default class Card {
     this._cardId = data._id;
     this._cardOwnerId = data.owner._id;
     this._likes = data.likes;
+    this._handleOpenPopup = handleOpenPopup;
+  }
+
+  getIdCard() { // для удобства использования в других местах создаем метод для id
+    return this._cardId;
   }
 
   _getTemplate = () => {
@@ -18,7 +23,7 @@ export default class Card {
     return this._imageElement;
   }
 
-  _deleteCard = () => {
+  deleteCard = () => {
       this._imageElement.remove();
   }
 
@@ -29,18 +34,19 @@ export default class Card {
   }
 
   _cardIsliked = () => {
-    if(this._likes.some((user) => {
+    const isLiked = this._likes.some((user) => {
       return this._userId === user._id;
-    })) {
-       this._buttonPlaceLike.classList.add('place__like_type_active');
-    }
+    });
+
+    if(isLiked) { this._buttonPlaceLike.classList.add('place__like_type_active') }
+
   }
 
   _like = () => {
     if(this._buttonPlaceLike.classList.contains('place__like_type_active')){
       this._api.removeLike(this._cardId)
         .then((res) => {
-          this._buttonPlaceLike.remove('place__like_type_active');
+          this._buttonPlaceLike.classList.remove('place__like_type_active'); // нужно еще было добавить classList
           this._numberOfLikes.textContent = res.likes.length;
         })
         .catch((err) => {
@@ -49,7 +55,7 @@ export default class Card {
     } else {
       this._api.like(this._cardId)
         .then((res) => {
-          this._buttonPlaceLike.add('place__like_type_active');
+          this._buttonPlaceLike.classList.add('place__like_type_active'); // нужно еще было добавить classList
           this._numberOfLikes.textContent = res.likes.length;
         })
         .catch((err) => {
@@ -59,7 +65,7 @@ export default class Card {
   }
 
   _setEventListeners = () => {
-    this._buttonDeleteTrash.addEventListener('click', this._deleteCard.bind(this));
+    this._buttonDeleteTrash.addEventListener('click', () => this._handleOpenPopup(this));
     this._buttonPlaceLike.addEventListener('click', () => {
       this._like();
     });
@@ -71,7 +77,7 @@ export default class Card {
   generateCard = () => {
     this._cardElement = this._getTemplate();
     this._buttonDeleteTrash = this._imageElement.querySelector('.place__trash'); 
-    this._buttonPlaceLike = this._imageElement.querySelector('.place__like');
+    this._buttonPlaceLike = this._imageElement.querySelector('.place__like_type_button');
     this._numberOfLikes = this._imageElement.querySelector('.place__like_type_number');
     this._cardName = this._imageElement.querySelector('.place__title'); 
     this._cardImage = this._imageElement.querySelector('.place__img');
