@@ -13,6 +13,7 @@ import {
     buttonEditProfile,
     formProfile,
     formCards,
+    formAvatarChange,
     nameInput,
     jobInput,
     buttonEditAvatar
@@ -54,7 +55,8 @@ const profileValidator = new FormValidator(config, formProfile);
 profileValidator.enableValidation();
 const cardValidator = new FormValidator(config, formCards);
 cardValidator.enableValidation();
-
+const avatarChangeValidator = new FormValidator(config, formAvatarChange)
+avatarChangeValidator.enableValidation();
 const popupWithImage = new PopupWithImage('.popup_type_image');
 popupWithImage.setEventListeners();
 
@@ -119,7 +121,12 @@ console.log(popupWithCard);
 
 buttonAddCard.addEventListener('click', openCardPopup); 
 buttonEditProfile.addEventListener('click', openProfilePopup);
-buttonEditAvatar.addEventListener('click', () => popupWithAvatarChange.open());
+buttonEditAvatar.addEventListener('click', openEditAvatarPopup);
+
+function openEditAvatarPopup() {
+  cardValidator.disableButton(); 
+  popupWithAvatarChange.open();
+}
 
 function openCardPopup() {
   cardValidator.disableButton(); 
