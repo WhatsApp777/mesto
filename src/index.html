@@ -39,7 +39,7 @@
       <div class="popup__container">
         <button class="popup__close-button popup__close-button_type_profile" type="button"></button>
         <form class="form form_type_profile" name="editProfile" novalidate>
-          <h2 class="form__title">Редактировать профиль</h2>
+          <h2 class="form__title form__title_type_profile">Редактировать профиль</h2>
           <input type="text" placeholder="Ваше имя" class="form__input form__input_type_name" name="profileName" id="profileName" minlength="2" maxlength="40" required autocomplete="off">
           <span id="error-profileName" class="form__error">hhgfg</span>
           <input type="text" placeholder="Ваша профессия" class="form__input form__input_type_job" name="profileJob" id="profileJob" minlength="2" maxlength="200" required autocomplete="off">
@@ -52,7 +52,7 @@
       <div class="popup__cards-container">
         <button class="popup__close-button popup__close-button_type_card" type="button"></button>
         <form class="form form_type_cards" name="addCards" novalidate>
-          <h2 class="form__title">Новое место</h2>
+          <h2 class="form__title form__title_type_cards">Новое место</h2>
           <input type="text" placeholder="Название" class="form__input form__input_type_title" name="profileTitle" id="profileTitle" minlength="2" maxlength="30" required autocomplete="off">
           <span id="error-profileTitle" class="form__error"></span>
           <input type="URL" placeholder="Ссылка на картинку" class="form__input form__input_type_link" name="profileLink" id="profileLink" minlength="2" required>
@@ -71,7 +71,7 @@
     <div class="popup popup_type_delete-card">
       <div class="popup__delete-card-container">
         <button class="popup__close-button popup__close-button_type_delete-card" typy="button"></button>
-        <h2 class="form__title">Вы уверены?</h2>
+        <h2 class="form__title_type_delete">Вы уверены?</h2>
         <form action="" class="form">
           <button type="submit" class="form__submit form__submit_type_delete-card">Да</button>
         </form>
@@ -81,7 +81,7 @@
       <div class="popup__update-avatar-container">
         <button class="popup__close-button popup__close-button_type_update-avatar" typy="button"></button>
         <form class="form form_type_update-avatar" name="addCards" novalidate>
-          <h2 class="form__title">Обновить аватар</h2>
+          <h2 class="form__title form__title_type_update-avatar">Обновить аватар</h2>
           <input type="URL" placeholder="Ссылка на картинку" class="form__input form__input_type_update-avatar" name="AvatarLink" id="AvatarLink" minlength="2" required>
           <span id="error-AvatarLink" class="form__error"></span>
           <button type="submit" class="form__submit form__submit_type_update-avatar">Сохранить</button>
