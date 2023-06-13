@@ -51,11 +51,14 @@
 @import url(../blocks/form/_type/form_type_profile.css);
 @import url(../blocks/form/_type/form_type_cards.css);
 @import url(../blocks/form/_type/form_type_update-avatar.css);
+@import url(../blocks/form/_type/form_type_delete-card.css);
+
+
 @import url(../blocks/form/__submit/form__submit.css);
 @import url(../blocks/form/__submit/_disable/form__submit_disable.css);
 @import url(../blocks/form/__submit/_type/form__submit_type_profile.css);
 @import url(../blocks/form/__submit/_type/form__submit_type_cards.css);
-@import url(../blocks/form/__submit/_type/form__submit_type_delete-card.css);
+@import url(../blocks/form/__title/_type/form__title_type_delete.css);
 @import url(../blocks/form/__submit/_type/form__submit_type_update-avatar.css);
 @import url(../blocks/form/__title/_type/form__title_type_cards.css);
 @import url(../blocks/form/__title/_type/form__title_type_delete.css);
