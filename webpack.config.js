@@ -42,11 +42,11 @@ module.exports = {
                filename: 'fonts/[name].[hash][ext]',
            }
         },
-         {
+        {
              test: /\.js$/,
              use: 'babel-loader',
              exclude: '/node_modules/'
-          }
+           }
       ],
   },
   plugins: [

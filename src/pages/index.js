@@ -15,8 +15,7 @@ import {
     formCards,
     nameInput,
     jobInput,
-    buttonEditAvatar 
-    
+    buttonEditAvatar
 } from '../utils/constants.js';
 
 const api = new Api({
@@ -26,8 +25,7 @@ const api = new Api({
     'Content-Type': 'application/json'
   }
 });
-
-
+const userId = null;
 api.getAppInfo() 
   .then(([userInformation, cardList]) => {
     userInfo.setUserInfo(userInformation);

@@ -1,0 +1,7 @@
+@media (min-width: 1024px) {
+    .form__title_type_delete-card {
+        padding: 34px 64px 0 36px;
+        font-size: 24px;
+        line-height: 29px;
+    }
+}

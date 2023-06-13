@@ -14,7 +14,7 @@ export default class Card {
     this._handleOpenPopup = handleOpenPopup;
   }
 
-  getIdCard() { // для удобства использования в других местах создаем метод для id
+  getIdCard() {
     return this._cardId;
   }
 
@@ -46,7 +46,7 @@ export default class Card {
     if(this._buttonPlaceLike.classList.contains('place__like_type_active')){
       this._api.removeLike(this._cardId)
         .then((res) => {
-          this._buttonPlaceLike.classList.remove('place__like_type_active'); // нужно еще было добавить classList
+          this._buttonPlaceLike.classList.remove('place__like_type_active');
           this._numberOfLikes.textContent = res.likes.length;
         })
         .catch((err) => {
@@ -55,7 +55,7 @@ export default class Card {
     } else {
       this._api.like(this._cardId)
         .then((res) => {
-          this._buttonPlaceLike.classList.add('place__like_type_active'); // нужно еще было добавить classList
+          this._buttonPlaceLike.classList.add('place__like_type_active');
           this._numberOfLikes.textContent = res.likes.length;
         })
         .catch((err) => {

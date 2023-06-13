@@ -1,10 +1,10 @@
 export default class Api {
-    constructor(options){
+    constructor(options) {
         this._url = options.url;
         this._headers = options.headers;
     }
 
-    getUserInfo(){
+    getUserInfo() {
         return fetch(`${this._url}/users/me`, {
             method: 'GET',
             headers: this._headers
@@ -12,7 +12,7 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    getInitialCards(){
+    getInitialCards() {
         return fetch(`${this._url}/cards`, {
             method: 'GET',
             headers: this._headers
@@ -20,11 +20,11 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    getAppInfo(){
+    getAppInfo() {
         return Promise.all([this.getUserInfo(), this.getInitialCards()])
     }
 
-    editProfile({name, about}){
+    editProfile({name, about}) {
         return fetch(`${this._url}/users/me`, {
             method: 'PATCH',
             headers: this._headers,
@@ -36,7 +36,7 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    editCard({ name, link }){
+    editCard({ name, link }) {
         return fetch(`${this._url}/cards`, {
             method: 'POST',
             headers: this._headers,
@@ -48,7 +48,7 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    deleteCard(cardId){
+    deleteCard(cardId) {
         return fetch(`${this._url}/cards/${cardId}`, {
             method: 'DELETE',
             headers: this._headers
@@ -56,7 +56,7 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    like(cardId){
+    like(cardId) {
         return fetch(`${this._url}/cards/${cardId}/likes`, {
             method: 'PUT',
             headers: this._headers
@@ -64,7 +64,7 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    removeLike(cardId){
+    removeLike(cardId) {
         return fetch(`${this._url}/cards/${cardId}/likes`, {
             method: 'DELETE',
             headers: this._headers
@@ -72,7 +72,7 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    changeAvatar(url){
+    changeAvatar(url) {
         return fetch(`${this._url}/users/me/avatar`, {
             method: 'PATCH',
             headers: this._headers,
@@ -83,7 +83,7 @@ export default class Api {
         .then(this._handleResponse);
     }
 
-    _handleResponse(res){
+    _handleResponse(res) {
         if(res.ok){
             return res.json();
         } else {
