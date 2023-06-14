@@ -77,7 +77,7 @@ function handleAvatarCgangeFormSubmit (data) {
   popupWithAvatarChange.loadButtonText('Сохранение...');
   api.changeAvatar(data.AvatarLink)
     .then((userData) => {
-      userInfo.setUserInfo({name: userData.name, about: userData.about, avatar: userData.avatar});
+      userInfo.setUserInfo(userData);
       popupWithAvatarChange.close();
     })
   .catch((err) => {
@@ -91,8 +91,8 @@ function handleAvatarCgangeFormSubmit (data) {
 function handleProfileFormSubmit (data) {
   popupWithProfile.loadButtonText('Сохранение...');
   api.editProfile({ name: data.profileName, about: data.profileJob })
-    .then(userData => {
-      userInfo.setUserInfo({name: userData.name, about: userData.about, avatar: userData.avatar});
+    .then((userData) => {
+      userInfo.setUserInfo(userData);
       popupWithProfile.close();
     })
     .catch((err) => {
@@ -106,7 +106,7 @@ console.log(popupWithCard);
  function handleCardFormSubmit(data) {
   popupWithCard.loadButtonText('Сохранение...');
   api.editCard({ name: data.profileTitle, link: data.profileLink })
-    .then(card => {
+    .then((card) => {
       cardSection.prependItem(createCardElement(card))
       popupWithCard.close()
     })

@@ -21,9 +21,4 @@ export default class PopupWithConfirmation extends Popup {
             this._handleCardDeleteSubmit(this._card);
         })
     }
-
-    close() {
-        super.close();
-        this._form.reset();
-    }
 }
