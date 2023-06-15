@@ -124,7 +124,7 @@ buttonEditProfile.addEventListener('click', openProfilePopup);
 buttonEditAvatar.addEventListener('click', openEditAvatarPopup);
 
 function openEditAvatarPopup() {
-  cardValidator.disableButton(); 
+  avatarChangeValidator.disableButton(); 
   popupWithAvatarChange.open();
 }
 
